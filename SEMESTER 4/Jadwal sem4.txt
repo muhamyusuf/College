@@ -1,0 +1,43 @@
+SENIN
+	PBO RA 7.30 LABTEK 1 LABKOM 3 lt 3
+
+	PBO PRAK RA 10.00-12.30
+
+	Kewirausahaan 13.00 GK2-407
+
+	PRAK SO 15.30
+	
+	
+SELASA
+	ProbStat RC 7.30 GK2-315
+	
+
+RABU
+	Strategi Algoritma RC 7.30 GK1-118
+
+	PRAK BASIS DATA RC 13.00 / RA 10.00
+
+	ASPRAK PKS 15.00 labtek 3 lt 2 lab mm 3
+
+
+KAMIS
+	Sistem Operasi RD 10.00
+
+	ASPRAK ALPRO II 15.30 
+	
+
+JUMAT
+	KWN 8.00 Online	
+
+	Basis Data RC GK2-313 10.00
+
+	Dasar Rekayasa Perangkat Lunak RC GK2-313 13.00
+	
+	Socio Informatika & Etika Prof RC 15.00 GK2-312
+
+
+
+
+
+
+

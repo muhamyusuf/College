@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="muham"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-24 08:01:59 AM"/>
+        <attribute name="created" value="bXVoYW07V1VQWFk7MjAyNC0wNS0xNzswNzo0Mjo1OCBQTTsyMjU2"/>
+        <attribute name="edited" value="bXVoYW07V1VQWFk7MjAyNC0wNS0yNDswODowMTo1OSBBTTs0OzIzNDc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="MAXPASIEN, PasienCount, i" type="Integer" array="False" size=""/>
+            <assign variable="MAXPASIEN" expression="100"/>
+            <declare name="Nama" type="String" array="True" size="MAXPASIEN"/>
+            <declare name="Umur" type="Integer" array="True" size="MAXPASIEN"/>
+            <declare name="JenisKelamin" type="String" array="True" size="MAXPASIEN"/>
+            <declare name="PoliTujuan" type="String" array="True" size="MAXPASIEN"/>
+            <declare name="NomorKesehatan" type="Integer" array="True" size="MAXPASIEN"/>
+            <declare name="Kondisi" type="String" array="True" size="MAXPASIEN"/>
+            <declare name="loop" type="Boolean" array="False" size=""/>
+            <assign variable="loop" expression="True"/>
+            <assign variable="pasienCount" expression="0"/>
+            <while expression="loop">
+                <output expression="&quot;Menu Pilihan:&quot;" newline="True"/>
+                <output expression="&quot;1. Tambahkan data pasien&quot;" newline="True"/>
+                <output expression="&quot;2. Lihat data pasien&quot;" newline="True"/>
+                <output expression="&quot;3. Pembayaran&quot;" newline="True"/>
+                <output expression="&quot;4. Keluar&quot;" newline="True"/>
+                <declare name="pilihan" type="Integer" array="False" size=""/>
+                <output expression="&quot;Masukan Pilihan: &quot;" newline="True"/>
+                <input variable="pilihan"/>
+                <if expression="pilihan==1">
+                    <then>
+                        <if expression="PasienCount &lt; MAXPASIEN">
+                            <then>
+                                <output expression="&quot;Masukan nama pasien :&quot;" newline="True"/>
+                                <input variable="Nama[PasienCount]"/>
+                                <output expression="&quot;Masukan umur pasien :&quot;" newline="True"/>
+                                <input variable="Umur[PasienCount]"/>
+                                <output expression="&quot;Masukan jenis kelamin pasien :&quot;" newline="True"/>
+                                <input variable="JenisKelamin[PasienCount]"/>
+                                <output expression="&quot;Masukan poli tujuan pasien :&quot;" newline="True"/>
+                                <input variable="PoliTujuan[PasienCount]"/>
+                                <output expression="&quot;Masukan nomor kesehatan pasien :&quot;" newline="True"/>
+                                <input variable="NomorKesehatan[PasienCount]"/>
+                                <assign variable="PasienCount" expression="PasienCount+1"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;Data Pasien Penuh&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <if expression="pilihan==2">
+                            <then>
+                                <assign variable="i" expression="0"/>
+                                <output expression="&quot;Data Pasien&quot;" newline="True"/>
+                                <assign variable="PasienCount" expression="PasienCount-1"/>
+                                <for variable="i" start="0" end="PasienCount" direction="inc" step="1">
+                                    <declare name="urutan" type="Integer" array="False" size=""/>
+                                    <assign variable="urutan" expression="i + 1"/>
+                                    <output expression="&quot;Pasien ke-&quot; &amp; urutan" newline="True"/>
+                                    <output expression="&quot;Nama Pasien: &quot; &amp; Nama[i]" newline="True"/>
+                                    <output expression="&quot;Umur Pasien: &quot; &amp; Umur[i]" newline="True"/>
+                                    <output expression="&quot;Jenis Kelamin : &quot; &amp; JenisKelamin[i]" newline="True"/>
+                                    <output expression="&quot;Poli Tujuan Pasien : &quot; &amp; PoliTujuan[i]" newline="True"/>
+                                    <output expression="&quot;Nomor Kesehatan Pasien : &quot; &amp; NomorKesehatan[i]" newline="True"/>
+                                </for>
+                                <assign variable="PasienCount" expression="PasienCount+1"/>
+                            </then>
+                            <else>
+                                <if expression="pilihan == 3">
+                                    <then>
+                                        <output expression="&quot;Pembayaran Gratis&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="pilihan==4">
+                                            <then>
+                                                <output expression="&quot;Terimakasih sudah menggunakan program ini&quot;" newline="True"/>
+                                                <assign variable="loop" expression="False"/>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot;Pilihan Tidak Valid&quot;" newline="True"/>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+    <function name="PasienInfo" type="None" variable="">
+        <parameters>
+            <parameter name="Nama" type="String" array="False"/>
+            <parameter name="Umur" type="Integer" array="False"/>
+            <parameter name="JenisKelamin" type="String" array="False"/>
+            <parameter name="Kondisi" type="String" array="False"/>
+            <parameter name="Index" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;Nama :&quot; &amp; Nama" newline="True"/>
+            <output expression="&quot;Umur :&quot; &amp; Umur" newline="True"/>
+            <output expression="&quot;Jenis Kelamin :&quot; &amp; JenisKelamin" newline="True"/>
+            <output expression="&quot;Kondisi Medis :&quot; &amp; Kondisi" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="muham"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-03 08:55:54 PM"/>
+        <attribute name="created" value="bXVoYW07V1VQWFk7MjAyNC0wNC0wMzswODoyNzoyNCBQTTsyMjQ3"/>
+        <attribute name="edited" value="bXVoYW07V1VQWFk7MjAyNC0wNC0wMzswODo1NTo1NCBQTTsxOzIzNTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="jumlahMatkul, totalNilai" type="Integer" array="False" size=""/>
+            <declare name="nilaiRataRata" type="Real" array="False" size=""/>
+            <assign variable="totalNilai" expression="0"/>
+            <output expression="&quot;Masukkan jumlah mata kuliah yang diambil: &quot;" newline="True"/>
+            <input variable="jumlahMatkul"/>
+            <assign variable="totalNilai" expression="hitungTotalNilai(jumlahMatkul, totalNilai)"/>
+            <assign variable="nilaiRataRata" expression="totalNilai/jumlahMatkul"/>
+            <declare name="indeksNilai" type="String" array="False" size=""/>
+            <assign variable="indeksNilai" expression="tentukanIndeksNilai(nilaiRataRata)"/>
+            <output expression="&quot;Mahasiswa mendapat nilai indeks &quot; &amp; indeksNilai &amp; &quot; dengan nilai rata-rata &quot; &amp; nilaiRataRata" newline="True"/>
+        </body>
+    </function>
+    <function name="hitungTotalNilai" type="Integer" variable="totalNilai">
+        <parameters>
+            <parameter name="jumlahMatkul" type="Integer" array="False"/>
+            <parameter name="totalNilai" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="nilaiMatkul, i" type="Integer" array="False" size=""/>
+            <for variable="i" start="1" end="jumlahMatkul" direction="inc" step="1">
+                <output expression="&quot;Masukan nilai mata kuliah ke-&quot; &amp; i &amp; &quot;: &quot;" newline="True"/>
+                <input variable="nilaiMatkul"/>
+                <assign variable="totalNilai" expression="totalNilai+nilaiMatkul"/>
+            </for>
+        </body>
+    </function>
+    <function name="tentukanIndeksNilai" type="String" variable="index">
+        <parameters>
+            <parameter name="nilaiRataRata" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="index" type="String" array="False" size=""/>
+            <if expression="nilaiRataRata&gt;=85 &amp;&amp; nilaiRataRata &lt;=100">
+                <then>
+                    <assign variable="index" expression="&quot;A&quot;"/>
+                </then>
+                <else>
+                    <if expression="nilaiRataRata&gt;=75">
+                        <then>
+                            <assign variable="index" expression="&quot;B&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="nilaiRataRata&gt;=65">
+                                <then>
+                                    <assign variable="index" expression="&quot;C&quot;"/>
+                                </then>
+                                <else>
+                                    <if expression="nilaiRataRata&gt;=55">
+                                        <then>
+                                            <assign variable="index" expression="&quot;D&quot;"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="index" expression="&quot;E&quot;"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

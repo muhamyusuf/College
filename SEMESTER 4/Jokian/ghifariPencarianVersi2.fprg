@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="muham"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-18 10:23:44 PM"/>
+        <attribute name="created" value="bXVoYW07V1VQWFk7MjAyNC0wNC0xODsxMDowNjozOCBQTTsyMjQ4"/>
+        <attribute name="edited" value="bXVoYW07V1VQWFk7MjAyNC0wNC0xODsxMDoyMzo0NCBQTTsxOzIzNTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="arr" type="Integer" array="True" size="10"/>
+            <declare name="n, target, i, start, end, result" type="Integer" array="False" size=""/>
+            <assign variable="n" expression="10"/>
+            <assign variable="start" expression="0"/>
+            <assign variable="end" expression="n-1"/>
+            <assign variable="result" expression="-1"/>
+            <for variable="i" start="0" end="end" direction="inc" step="1">
+                <input variable="arr[i]"/>
+            </for>
+            <output expression="&quot;Masukkan nilai yang ingin dicari: &quot;" newline="True"/>
+            <input variable="target"/>
+            <assign variable="i" expression="0"/>
+            <while expression="i &lt;= n-1">
+                <declare name="mid" type="Integer" array="False" size=""/>
+                <assign variable="mid" expression="start + (end-start)/2"/>
+                <if expression="arr[mid]==target">
+                    <then>
+                        <assign variable="result" expression="mid"/>
+                        <output expression="&quot;Elemen &quot; &amp; target &amp; &quot; ditemukan pada indeks ke- &quot; &amp; result" newline="True"/>
+                        <breakpoint expression="" always="True"/>
+                    </then>
+                    <else>
+                        <if expression="arr[mid] &lt; target">
+                            <then>
+                                <assign variable="start" expression="mid + 1"/>
+                            </then>
+                            <else>
+                                <assign variable="end" expression="mid - 1"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+            <if expression="result == -1">
+                <then>
+                    <output expression="&quot;Elemen &quot; &amp; target &amp; &quot; tidak ditemukan&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
